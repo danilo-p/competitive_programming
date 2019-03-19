@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <iostream>
 #include <map>
 #include <set>
@@ -18,17 +19,13 @@ void reset_board(int n) {
 
 int main() {
 	int n, m, row, column, squares, size, k, cases, i, j;
-	bool square_found;
+	bool square_found, some_square_found;
 	char direction;
 	set< pair<int, int> > dot_lines;
 
-	cin >> n;
 	cases = 0;
-	while (cin >> n) {
+	while (scanf("%d", &n) != EOF) {
 		reset_board(n);
-
-		cases++;
-		cout << "Problem #" << cases << endl << endl;
 
 		// Get the lines
 		cin >> m;
@@ -36,21 +33,30 @@ int main() {
 			cin >> direction;
 
 			if (direction == 'H') {
-				cin >> column;
 				cin >> row;
+				cin >> column;
 				board[make_pair(row, column)].insert(make_pair(row, column + 1));
 			}
 
 			if (direction == 'V') {
-				cin >> row;
 				cin >> column;
-				board[make_pair(column, row)].insert(make_pair(column, row + 1));
+				cin >> row;
+				board[make_pair(row, column)].insert(make_pair(row + 1, column));
 			}
 		}
 
+		if (cases > 0) {
+			cout << endl << "**********************************" << endl << endl;
+		}
+
+		cases++;
+		cout << "Problem #" << cases << endl << endl;
+
 		// Count squares
-		squares = 0;
+		some_square_found = false;
 		for (size = 1; size < n; size++) {
+			squares = 0;
+
 			// Try to find squares
 			for (i = 1; i <= n; i++) {
 				for (j = 1; j <= n; j++) {
@@ -101,6 +107,7 @@ int main() {
 					if (!square_found) continue;
 
 					squares++;
+					some_square_found = true;
 				}
 			}
 
@@ -110,7 +117,9 @@ int main() {
 			}
 		}
 
-		cout << endl << "**********************************" << endl;
+		if (!some_square_found) {
+			cout << "No completed squares can be found." << endl;
+		}
 	}
 
 	return 0;
