@@ -76,7 +76,7 @@ int main() {
         j = 0;
         dir = 'r';
 
-        while (first_step || (!first_step && i != lines_count - 1 && j != 0)) {
+        while (first_step || (!first_step && (i != lines_count - 1 || j != 0))) {
             first_step = false;
 
             visited_count[i][j]++;
@@ -96,8 +96,6 @@ int main() {
                 j = j - 1;
                 if (i - 1 >= 0 && maze[i - 1][j] == '0') dir = 'u';
             }
-
-            cout << "i j dir " << i << " " << j << " " << dir << endl;
         }
 
         calculate_and_print();
