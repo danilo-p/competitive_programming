@@ -1,0 +1,17 @@
+https://a2oj.com/contest?ID=39222
+
+- [P1 - Noel's Labels](https://www.urionlinejudge.com.br/judge/en/problems/view/2482)
+- [P2 - Diamonds and Sand](https://www.urionlinejudge.com.br/judge/en/problems/view/1069)
+- [P3 - Dijkstra](https://www.urionlinejudge.com.br/judge/en/problems/view/2653)
+- [P4 - Destruction Cannon](https://www.urionlinejudge.com.br/judge/en/problems/view/1288)
+- [P5 - Turkish Roulette](https://www.urionlinejudge.com.br/judge/en/problems/view/1485)
+- [P6 - Board With Prizes](https://www.urionlinejudge.com.br/judge/en/problems/view/1543)
+- [P7 - El Dorado](https://www.urionlinejudge.com.br/judge/en/problems/view/1645)
+- [P8 - Isosceles](https://www.urionlinejudge.com.br/judge/en/problems/view/2243)
+- [P9 - Dabriel's Matrix](https://www.urionlinejudge.com.br/judge/en/problems/view/2778)
+- [P10 - Balancing Gifts](https://www.urionlinejudge.com.br/judge/en/problems/view/2723)
+- [P11 - Even or Odd](https://www.urionlinejudge.com.br/judge/en/problems/view/2677)
+- [P12 - Finding Seats](https://www.urionlinejudge.com.br/judge/en/problems/view/1365)
+- [P13 - Consecutive Subsequence](http://codeforces.com/problemset/problem/977/F)
+- [P14 - Geometric Progression](http://codeforces.com/problemset/problem/567/C)
+- [P15 - The Wizard is Relentless](https://www.urionlinejudge.com.br/judge/en/problems/view/2713)
