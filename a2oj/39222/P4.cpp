@@ -2,56 +2,66 @@
 #include <utility>
 #include <cmath>
 
-#define MAX_N 50
-#define MAX_K 100
+#define MAX_BULLETS_COUNT 50
+#define MAX_CANNON_CAPACITY 100
 
 using namespace std;
 
-pair<int, int> b[MAX_N];
-int memo[MAX_N][MAX_K];
+pair<int, int> bullets[MAX_BULLETS_COUNT];
+int min_castle_resistance_memo[MAX_BULLETS_COUNT][MAX_CANNON_CAPACITY];
 
-void reset_memo(int n, int k) {
-	for (int i = 0; i < n; i++)
-		for (int j = 0; j < k; j++)
-			memo[i][j] = -1;
+void reset_min_castle_resistance_memo(int bullets_count, int cannon_capacity, int castle_resistance) {
+	for (int i = 0; i < bullets_count; i++)
+		for (int j = 0; j < cannon_capacity; j++)
+			min_castle_resistance_memo[i][j] = castle_resistance;
 }
 
-int max_damage(int n, int k, int i, int current_capacity, int current_damage) {
-	if (i == n || current_capacity == k)
-		return current_damage;
+int min_castle_resistance(int bullets_count, int cannon_capacity, int castle_resistance, int i, int current_weight, int current_castle_resistance) {
+	if (i == bullets_count || current_castle_resistance <= 0)
+		return current_castle_resistance;
 
-	if (memo[i][current_capacity] >= 0)
-		return memo[i][current_capacity];
+	if (min_castle_resistance_memo[i][current_weight] < castle_resistance)
+		return min_castle_resistance_memo[i][current_weight];
 
-	int partial_max_damage = 0;
-	if (current_capacity + b[i].second <= k)
-		partial_max_damage = max_damage(n, k, i + 1, current_capacity + b[i].second, current_damage + b[i].first);
+	int partial_min_castle_resistance = castle_resistance;
+	if (current_weight + bullets[i].second <= cannon_capacity)
+		partial_min_castle_resistance = min_castle_resistance(
+			bullets_count, cannon_capacity, castle_resistance,
+			i + 1,
+			current_weight + bullets[i].second,
+			current_castle_resistance - bullets[i].first
+		);
 
-	partial_max_damage = max(partial_max_damage, max_damage(n, k, i + 1, current_capacity, current_damage));
+	partial_min_castle_resistance = min(partial_min_castle_resistance, min_castle_resistance(
+		bullets_count, cannon_capacity, castle_resistance,
+		i + 1,
+		current_weight,
+		current_castle_resistance
+	));
 
-	memo[i][current_capacity] = partial_max_damage;
+	min_castle_resistance_memo[i][current_weight] = partial_min_castle_resistance;
 
-	return partial_max_damage;
+	return partial_min_castle_resistance;
 }
 
 int main() {
-	int c, n, x, y, k, r, i, j;
+	int c, bullets_count, destruction_power, projectil_weight, cannon_capacity, castle_resistance, i, j;
 
 	cin >> c;
 	while (c--) {
-		cin >> n;
+		cin >> bullets_count;
 
-		for (i = 0; i < n; i++) {
-			cin >> x >> y;
-			b[i] = make_pair(x, y);
+		for (i = 0; i < bullets_count; i++) {
+			cin >> destruction_power >> projectil_weight;
+			bullets[i] = make_pair(destruction_power, projectil_weight);
 		}
 
-		cin >> k;
-		cin >> r;
+		cin >> cannon_capacity;
+		cin >> castle_resistance;
 
-		reset_memo(n, k);
+		reset_min_castle_resistance_memo(bullets_count, cannon_capacity, castle_resistance);
 
-		if (max_damage(n, k, 0, 0, 0) >= r) {
+		if (min_castle_resistance(bullets_count, cannon_capacity, castle_resistance, 0, 0, castle_resistance) <= 0) {
 			cout << "Missao completada com sucesso" << endl;
 		} else {
 			cout << "Falha na missao" << endl;
