@@ -5,14 +5,14 @@
 using namespace std;
 
 int main() {
-	string j;
-	set<string> js;
+    string j;
+    set<string> js;
 
-	while(getline(cin, j)) {
-		js.insert(j);
-	}
+    while(getline(cin, j)) {
+        js.insert(j);
+    }
 
-	cout << js.size() << endl;
+    cout << js.size() << endl;
 
-	return 0;
+    return 0;
 }
