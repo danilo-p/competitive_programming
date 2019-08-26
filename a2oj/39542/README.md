@@ -1,0 +1,15 @@
+https://a2oj.com/contest?ID=39542
+
+- [P1 - Super Primes: Engage!](https://www.urionlinejudge.com.br/judge/en/problems/view/2674)
+- [P2 - The Law Goes on Horseback!](https://www.urionlinejudge.com.br/judge/en/problems/view/2123)
+- [P3 - Pro Ability](https://www.urionlinejudge.com.br/judge/en/problems/view/2337)
+- [P4 - Tour](https://uva.onlinejudge.org/index.php?option=onlinejudge&amp;page=show_problem&amp;problem=4093)
+- [P5 - Elementary Math](https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&amp;page=show_problem&amp;problem=5449)
+- [P6 - Trading Presents](https://www.urionlinejudge.com.br/judge/en/problems/view/2734)
+- [P7 - Jaida and Multiply Game](https://www.urionlinejudge.com.br/judge/en/problems/view/1697)
+- [P8 - Book Club](https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&amp;page=show_problem&amp;problem=4899)
+- [P9 - Hyperprimes](https://www.urionlinejudge.com.br/judge/en/problems/view/1602)
+- [P10 - The Benefits of Vodka](https://www.urionlinejudge.com.br/judge/en/problems/view/1207)
+- [P11 - RSA](https://www.urionlinejudge.com.br/judge/en/problems/view/1716)
+- [P12 - Odds and Evens 2.0](https://www.urionlinejudge.com.br/judge/en/problems/view/1904)
+- [P13 - Hooligan](https://www.urionlinejudge.com.br/judge/en/problems/view/1394)
